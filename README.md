@@ -58,6 +58,7 @@ Every measured result is saved as JSON in `runs/` and summarised in `reports/slo
 ```
 repo/
 ├── app.py                  Streamlit web app (the front end)
+├── serve.py                container entry point: loads the models in the background, then starts the app
 ├── askmyrepo/              the Python package
 │   ├── __main__.py         command line: files, baseline, index, search, ask, evaluate, judge
 │   ├── manifest.py         reads corpus.toml, lists the files to index from Git
@@ -76,7 +77,8 @@ repo/
 │   ├── judge.py            the four-measure judge and the hand-label check
 │   ├── llm.py              model interface, Gemini client, errors, price table
 │   ├── tools.py            typed functions turned into tools for the model
-│   └── tracing.py          optional Langfuse tracing
+│   ├── tracing.py          optional Langfuse tracing
+│   └── warmup.py           loads both models in a background thread (used by serve.py)
 ├── tests/                  123 tests (no keys, no network)
 ├── scripts/
 │   └── compare_with_ragas.py   one-off comparison with ragas (own environment)
@@ -180,7 +182,7 @@ python -m askmyrepo --help
 streamlit run app.py          # http://localhost:8501
 ```
 
-A single chat page: type a question; each claim appears with a chip showing its file and lines (or SQL), plus the cost and time. The sidebar has a repository filter, six example questions and the session's cost. The index must already be built.
+A single chat page: type a question and read the answer as plain text, with the cost and time under it. The sidebar has a repository filter, six example questions and the session's cost. The index must already be built.
 
 ### Tests
 

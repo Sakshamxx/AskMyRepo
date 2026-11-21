@@ -15,12 +15,11 @@ RUN uv sync --frozen --no-dev --no-install-project
 RUN python -c "from huggingface_hub import snapshot_download as d; d('Qwen/Qwen3-Embedding-0.6B'); d('Qwen/Qwen3-Reranker-0.6B')"
 
 COPY askmyrepo ./askmyrepo
-COPY app.py corpus.toml ./
+COPY app.py serve.py corpus.toml ./
 COPY index ./index
 COPY data/shoplite.db /data/shoplite.db
 RUN uv sync --frozen --no-dev
 
 EXPOSE 8501
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0", \
-     "--server.headless=true", "--browser.gatherUsageStats=false", \
-     "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
+# serve.py loads both models in the background, then starts Streamlit (no visitor waits for them).
+CMD ["python", "serve.py"]

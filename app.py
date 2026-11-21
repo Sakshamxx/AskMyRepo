@@ -154,7 +154,7 @@ def ask(question: str, mode: str, setup: str, filters: dict) -> dict:
 
 # Draws one reply: claims with source chips, a refusal box, or an error.
 def render(reply: dict) -> None:
-    """One answer: claim by claim with its source chip, a refusal if there is no answer."""
+    """One answer as plain text, claim by claim; a refusal box if there is no answer."""
     if reply.get("error"):
         st.error(reply["error"])
         return
@@ -162,9 +162,7 @@ def render(reply: dict) -> None:
         st.markdown(f'<div class="refusal">Not in the code or data I searched: '
                     f'{reply["refusal"]}</div>', unsafe_allow_html=True)
     for claim in reply["claims"]:
-        where = claim["where"].replace("<", "&lt;")
-        st.markdown(f'<div class="claim"><div class="text">{claim["statement"]}</div>'
-                    f'<span class="chip">[{claim["source"]}] {where}</span></div>',
+        st.markdown(f'<div class="claim"><div class="text">{claim["statement"]}</div></div>',
                     unsafe_allow_html=True)
     st.markdown(f'<div class="meta">${reply["cost"]:.4f} · {reply["seconds"]:.1f} s</div>',
                 unsafe_allow_html=True)

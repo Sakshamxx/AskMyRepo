@@ -74,9 +74,9 @@ cp ../shoplite/instance/shoplite.db gcp/data/shoplite.db     # seed ShopLite fir
 cd gcp
 gcloud run deploy $SERVICE --source . \
   --project $PROJECT_ID --region $REGION \
-  --port 8501 --memory 8Gi --cpu 4 --cpu-boost \
-  --timeout 600 --concurrency 4 \
-  --min-instances 0 --max-instances 2 \
+  --port 8501 --memory 16Gi --cpu 4 --cpu-boost --no-cpu-throttling \
+  --timeout 600 --concurrency 1 \
+  --min-instances 1 --max-instances 2 \
   --session-affinity --allow-unauthenticated \
   --set-secrets GEMINI_API_KEY=gemini-api-key:latest,PINECONE_API_KEY=pinecone-api-key:latest \
   --quiet
@@ -85,8 +85,10 @@ gcloud run deploy $SERVICE --source . \
 | Flag | Why |
 |---|---|
 | `--source .` | Builds the image on Cloud Build (amd64); takes about 15–20 minutes because of PyTorch and the 2.4 GB of models. |
-| `--memory 8Gi --cpu 4` | Both models are loaded in memory; Cloud Run needs 2+ CPUs above 4 GiB. |
-| `--cpu-boost` | Faster cold start. |
+| `--memory 16Gi --cpu 4` | Both models are loaded in memory; with 8 GiB the instance was killed ("Memory limit exceeded"). |
+| `--concurrency 1` | Each question is heavy (reranking and several model calls); one at a time per instance. |
+| `--min-instances 1 --no-cpu-throttling` | One instance stays warm with its models loaded (billed continuously). Set `--min-instances 0` to save money. |
+| `--cpu-boost` | Faster cold start. `serve.py` also loads the models in the background at startup. |
 | `--timeout 600` | An agent answer can take minutes. |
 | `--session-affinity` | Streamlit uses a websocket; keep a browser session on one instance. |
 | `--max-instances 2` | Caps the cost. |
