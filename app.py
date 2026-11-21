@@ -10,7 +10,7 @@ import streamlit as st
 from askmyrepo import agent_tools, answer, keyword_index, vector_index
 from askmyrepo.answer import ContractBroken
 from askmyrepo.database import connect_read_only
-from askmyrepo.llm import GeminiClient, ModelError, cost_usd
+from askmyrepo.llm import GeminiClient, Message, ModelError, Usage, cost_usd
 from askmyrepo.search import SETUPS, Searcher
 
 st.set_page_config(page_title="AskMyRepo", page_icon="◦", layout="centered")
@@ -27,6 +27,10 @@ EXAMPLES = [
     "Which active product has the least sellable stock, and does the low-stock report list it?",
     "Where is inv_reservation_ledger written?",
 ]
+
+COMPOSE_PROMPT = """You write the final answer a user reads, from facts that were already checked.
+Use only the facts given: add nothing and leave nothing important out. Write plainly, in short
+prose or a short list. No source numbers, no file paths, no SQL."""
 
 # name: (accent, soft background of the accent, subtle ink for chips)
 PALETTES = {
@@ -120,6 +124,18 @@ def filters_for(version_choice: str, repo_choice: str) -> dict:
     return filters
 
 
+# One extra, cheap model call that turns the checked claims into a readable answer.
+def compose(client: GeminiClient, question: str, claims: list[dict]) -> tuple[str, Usage]:
+    """Rewrite the verified claims as one plain answer; falls back to the claims if it fails."""
+    facts = "\n".join(f"- {claim['statement']}" for claim in claims)
+    try:
+        reply = client.reply(COMPOSE_PROMPT, [Message(role="user",
+                             text=f"Question: {question}\n\nChecked facts:\n{facts}")], tools=[])
+    except ModelError:
+        return "", Usage()
+    return reply.text.strip(), reply.usage
+
+
 # The only place the UI calls the agent; returns plain data the page can draw.
 def ask(question: str, mode: str, setup: str, filters: dict) -> dict:
     """Answer one question; return the claims as plain data, plus steps, usage and cost."""
@@ -146,24 +162,32 @@ def ask(question: str, mode: str, setup: str, filters: dict) -> dict:
     claims = ([{"statement": c.statement, "source": c.passage, "where": describe(c.passage),
                 "text": sources[c.passage - 1].get("text", "")} for c in result.claims]
               if result.answered else [])
+    text = ""
+    if claims:
+        text, extra = compose(client, question, claims)
+        usage.add(extra)
     return {"answered": result.answered, "refusal": result.refusal, "claims": claims,
-            "steps": steps, "tokens_in": usage.input_tokens, "tokens_out": usage.output_tokens,
-            "cost": cost_usd(MODEL, usage), "seconds": time.perf_counter() - started,
-            "mode": mode, "shown": len(sources)}
+            "text": text, "steps": steps, "tokens_in": usage.input_tokens,
+            "tokens_out": usage.output_tokens, "cost": cost_usd(MODEL, usage),
+            "seconds": time.perf_counter() - started, "mode": mode, "shown": len(sources)}
 
 
 # Draws one reply: claims with source chips, a refusal box, or an error.
 def render(reply: dict) -> None:
-    """One answer as plain text, claim by claim; a refusal box if there is no answer."""
+    """One answer as plain text (a refusal box if there is none), then its cost and time."""
     if reply.get("error"):
         st.error(reply["error"])
         return
     if not reply["answered"]:
         st.markdown(f'<div class="refusal">Not in the code or data I searched: '
                     f'{reply["refusal"]}</div>', unsafe_allow_html=True)
-    for claim in reply["claims"]:
-        st.markdown(f'<div class="claim"><div class="text">{claim["statement"]}</div></div>',
+    if reply.get("text"):
+        st.markdown(f'<div class="claim"><div class="text">{reply["text"]}</div></div>',
                     unsafe_allow_html=True)
+    else:  # the writing step failed: show the checked claims as they are
+        for claim in reply["claims"]:
+            st.markdown(f'<div class="claim"><div class="text">{claim["statement"]}</div></div>',
+                        unsafe_allow_html=True)
     st.markdown(f'<div class="meta">${reply["cost"]:.4f} · {reply["seconds"]:.1f} s</div>',
                 unsafe_allow_html=True)
 
