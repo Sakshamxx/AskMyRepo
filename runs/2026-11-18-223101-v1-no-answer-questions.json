@@ -1,0 +1,125 @@
+{
+  "system": "v1 prompt (commit 123106b), meaning top 5, newest version",
+  "rows": [
+    {
+      "id": "Q31",
+      "question": "How does ShopLite store a customer's wishlist?",
+      "answer": "Based on the provided documentation, there is no mention of a wishlist feature in ShopLite [3, 4].",
+      "retrieved": [
+        "shoplite-warehouse/README.md:1-6",
+        "shoplite/README.md:1-6",
+        "shoplite/docs/api.md:1-4",
+        "shoplite/docs/api.md:5-45",
+        "shoplite-warehouse/README.md:19-31"
+      ]
+    },
+    {
+      "id": "Q32",
+      "question": "How many loyalty points does a ₹1,000 order earn?",
+      "answer": "The provided passages do not mention loyalty points [1, 2, 3, 4, 5].",
+      "retrieved": [
+        "shoplite/docs/api.md:1-4",
+        "shoplite/shoplite/services/coupons.py:26-31",
+        "shoplite/shoplite/services/coupons.py:97-101",
+        "shoplite/docs/api.md:5-45",
+        "shoplite/shoplite/services/coupons.py:1-15"
+      ]
+    },
+    {
+      "id": "Q33",
+      "question": "How does ShopLite convert prices to US dollars?",
+      "answer": "The provided passages do not contain information on how ShopLite converts prices to US dollars; they only state that amounts are in integer paise (₹1 = 100 paise) [1].",
+      "retrieved": [
+        "shoplite/docs/api.md:1-4",
+        "shoplite/README.md:1-6",
+        "shoplite-warehouse/README.md:1-6",
+        "shoplite/CHANGELOG.md:39-40",
+        "shoplite/CHANGELOG.md:1-5"
+      ]
+    },
+    {
+      "id": "Q34",
+      "question": "How are size variants of a product stocked?",
+      "answer": "Based on the provided passages, there is no mention of how size variants of a product are stocked.",
+      "retrieved": [
+        "shoplite/shoplite/services/stock.py:29-32",
+        "shoplite/shoplite/api/admin.py:63-69",
+        "shoplite/shoplite/services/stock.py:92-94",
+        "shoplite/CHANGELOG.md:17-21",
+        "shoplite/shoplite/services/stock.py:103-112"
+      ]
+    },
+    {
+      "id": "Q35",
+      "question": "How does cash-on-delivery checkout skip the payment gateway?",
+      "answer": "Based on the provided codebase, there is no mention of a cash-on-delivery checkout feature or how it skips the payment gateway.",
+      "retrieved": [
+        "shoplite/shoplite/payments/__init__.py:1-1",
+        "shoplite/docs/architecture.md:17-26",
+        "shoplite/shoplite/payments/gateway.py:1-8",
+        "shoplite/shoplite/payments/gateway.py:29-37",
+        "shoplite/shoplite/services/checkout.py:43-93"
+      ]
+    },
+    {
+      "id": "Q36",
+      "question": "Which endpoint lets a customer cancel their own order?",
+      "answer": "Based on the provided documentation, there is no endpoint that allows a customer to cancel their own order. Customers can view their orders via `GET /orders`, but only administrators can issue a full refund via `POST /orders/<id>/refund` [2, 3].",
+      "retrieved": [
+        "shoplite/CHANGELOG.md:36-38",
+        "shoplite/docs/api.md:5-45",
+        "shoplite/shoplite/api/payments.py:27-34",
+        "shoplite/shoplite/services/refunds.py:15-29",
+        "shoplite/shoplite/services/checkout.py:43-93"
+      ]
+    },
+    {
+      "id": "Q37",
+      "question": "How does the reset-password email work?",
+      "answer": "Based on the provided passages, there are no details explaining how a reset-password email works.",
+      "retrieved": [
+        "shoplite/scripts/seed.py:74-76",
+        "shoplite/shoplite/services/auth.py:36-53",
+        "shoplite/shoplite/services/auth.py:28-33",
+        "shoplite/shoplite/services/auth.py:21-25",
+        "shoplite/shoplite/notifications/email.py:11-14"
+      ]
+    },
+    {
+      "id": "Q38",
+      "question": "Where are product images stored?",
+      "answer": "Based on the provided passages, there is no mention of where product images are stored.",
+      "retrieved": [
+        "shoplite/shoplite/services/stock.py:24-26",
+        "shoplite/docs/data-model.md:1-22",
+        "shoplite/shoplite/models/inventory.py:16-26",
+        "shoplite/shoplite/services/catalog.py:1-9",
+        "shoplite/shoplite/models/product.py:1-10"
+      ]
+    },
+    {
+      "id": "Q39",
+      "question": "How is GST added to the order total at checkout?",
+      "answer": "Based on the provided code, there is no mention or calculation of GST added to the order total at checkout.",
+      "retrieved": [
+        "shoplite/CHANGELOG.md:32-35",
+        "shoplite/shoplite/services/checkout.py:18-30",
+        "shoplite/shoplite/services/checkout.py:43-93",
+        "shoplite/shoplite/services/cart.py:65-67",
+        "shoplite/shoplite/services/pricing.py:10-18"
+      ]
+    },
+    {
+      "id": "Q40",
+      "question": "What is the API's rate limit per customer?",
+      "answer": "Based on the provided documentation, there is no mention of an API rate limit per customer.",
+      "retrieved": [
+        "shoplite/docs/api.md:1-4",
+        "shoplite/docs/api.md:5-45",
+        "shoplite/shoplite/services/__init__.py:1-1",
+        "shoplite/shoplite/faults.py:40-47",
+        "shoplite/shoplite/services/shipping.py:24-28"
+      ]
+    }
+  ]
+}

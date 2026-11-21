@@ -1,0 +1,122 @@
+{
+  "Where is SL-ORD-409 raised? | meaning": {
+    "rank": 5,
+    "top5": [
+      "shoplite/shoplite/utils/ids.py:18-20",
+      "shoplite/docs/api.md:46-70",
+      "shoplite/CHANGELOG.md:36-38",
+      "shoplite/shoplite/errors.py:57-60",
+      "shoplite/shoplite/services/stock.py:41-53"
+    ]
+  },
+  "Where is SL-ORD-409 raised? | fused": {
+    "rank": 5,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/errors.py:50-54",
+      "shoplite/shoplite/errors.py:57-60",
+      "shoplite/shoplite/utils/ids.py:18-20",
+      "shoplite/shoplite/services/shipping.py:31-43"
+    ]
+  },
+  "Where is SL-ORD-409 raised? | reranked": {
+    "rank": 2,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/services/shipping.py:31-43",
+      "shoplite/shoplite/services/refunds.py:15-29",
+      "shoplite/shoplite/api/admin.py:101-108",
+      "shoplite/shoplite/errors.py:50-54"
+    ]
+  },
+  "SL-ORD-409 | meaning": {
+    "rank": 4,
+    "top5": [
+      "shoplite/shoplite/utils/ids.py:18-20",
+      "shoplite/CHANGELOG.md:36-38",
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/services/stock.py:41-53",
+      "shoplite/shoplite/utils/ids.py:1-5"
+    ]
+  },
+  "SL-ORD-409 | fused": {
+    "rank": null,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/errors.py:57-60",
+      "shoplite/shoplite/utils/ids.py:18-20",
+      "shoplite/shoplite/api/orders.py:37-45",
+      "shoplite/shoplite/api/admin.py:101-108"
+    ]
+  },
+  "SL-ORD-409 | reranked": {
+    "rank": 2,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/services/refunds.py:15-29",
+      "shoplite/shoplite/services/shipping.py:31-43",
+      "shoplite/shoplite/errors.py:50-54",
+      "shoplite/shoplite/errors.py:57-60"
+    ]
+  },
+  "Where is SL-INV-422 raised? | meaning": {
+    "rank": null,
+    "top5": [
+      "shoplite/migrations/versions/0003_add_stock_reservations.py:19-43",
+      "shoplite/docs/api.md:46-70",
+      "shoplite/migrations/versions/0003_add_stock_reservations.py:1-16",
+      "shoplite/shoplite/api/admin.py:72-82",
+      "shoplite/shoplite/errors.py:63-67"
+    ]
+  },
+  "Where is SL-INV-422 raised? | fused": {
+    "rank": null,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/errors.py:57-60",
+      "shoplite/shoplite/warehouse_client.py:47-58",
+      "shoplite/shoplite/utils/validation.py:1-3",
+      "shoplite-warehouse/warehouse/api.py:26-30"
+    ]
+  },
+  "Where is SL-INV-422 raised? | reranked": {
+    "rank": 4,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/services/coupons.py:34-44",
+      "shoplite/shoplite/errors.py:22-26",
+      "shoplite/shoplite/services/stock.py:103-112",
+      "shoplite-warehouse/warehouse/api.py:62-71"
+    ]
+  },
+  "Where is SL-CPN-409 raised? | meaning": {
+    "rank": null,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/errors.py:50-54",
+      "shoplite/shoplite/faults.py:1-15",
+      "shoplite/shoplite/faults.py:23-30",
+      "shoplite/shoplite/services/shipping.py:1-13"
+    ]
+  },
+  "Where is SL-CPN-409 raised? | fused": {
+    "rank": 3,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/errors.py:50-54",
+      "shoplite/shoplite/services/coupons.py:34-44",
+      "shoplite/shoplite/services/coupons.py:18-23",
+      "shoplite/shoplite/services/coupons.py:79-94"
+    ]
+  },
+  "Where is SL-CPN-409 raised? | reranked": {
+    "rank": 2,
+    "top5": [
+      "shoplite/docs/api.md:46-70",
+      "shoplite/shoplite/services/coupons.py:79-94",
+      "shoplite/shoplite/services/coupons.py:54-65",
+      "shoplite/shoplite/errors.py:50-54",
+      "shoplite/shoplite/services/auth.py:36-53"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "experiment": "chunk size and overlap, search by meaning, newest version, 30 answerable questions",
+  "results": {
+    "syntax": {
+      "chunks": 313,
+      "recall": "23/30",
+      "chars_sent_mean": 4430,
+      "lines_per_chunk_mean": 11.1,
+      "embed_seconds": 50.3,
+      "misses": [
+        "Q19",
+        "Q21",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29"
+      ]
+    },
+    "fixed-20-overlap-0": {
+      "chunks": 233,
+      "recall": "25/30",
+      "chars_sent_mean": 4001,
+      "lines_per_chunk_mean": 16.8,
+      "embed_seconds": 31.4,
+      "misses": [
+        "Q21",
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q29"
+      ]
+    },
+    "fixed-40-overlap-0": {
+      "chunks": 134,
+      "recall": "25/30",
+      "chars_sent_mean": 6870,
+      "lines_per_chunk_mean": 29.2,
+      "embed_seconds": 31.1,
+      "misses": [
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29"
+      ]
+    },
+    "fixed-40-overlap-10": {
+      "chunks": 144,
+      "recall": "25/30",
+      "chars_sent_mean": 7412,
+      "lines_per_chunk_mean": 32.5,
+      "embed_seconds": 37.2,
+      "misses": [
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q28",
+        "Q29"
+      ]
+    },
+    "fixed-80-overlap-0": {
+      "chunks": 85,
+      "recall": "26/30",
+      "chars_sent_mean": 11057,
+      "lines_per_chunk_mean": 46.1,
+      "embed_seconds": 34.3,
+      "misses": [
+        "Q25",
+        "Q26",
+        "Q27",
+        "Q29"
+      ]
+    },
+    "fixed-80-overlap-20": {
+      "chunks": 87,
+      "recall": "27/30",
+      "chars_sent_mean": 11134,
+      "lines_per_chunk_mean": 49.4,
+      "embed_seconds": 36.7,
+      "misses": [
+        "Q25",
+        "Q26",
+        "Q27"
+      ]
+    }
+  }
+}

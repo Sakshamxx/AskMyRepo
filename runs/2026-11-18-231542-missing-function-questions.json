@@ -1,0 +1,99 @@
+{
+  "questions": [
+    "What does cancel_order() return when the order has already shipped?",
+    "How does calculate_gst() round the tax amount?",
+    "What does send_password_reset_email() put in the email?",
+    "What happens in apply_gift_card() when the card balance is lower than the order total?",
+    "How does stack_coupons() decide the order in which coupons are applied?",
+    "What does refund_partial() do with the coupon discount?",
+    "What does get_wishlist() return for a new customer?",
+    "Which exchange rate does convert_currency() use?",
+    "How does reserve_stock_for_cart() handle two carts asking for the last unit?",
+    "Who does notify_low_stock() send its alert to?"
+  ],
+  "note": "none of these functions exists in ShopLite (checked with git grep on every ref)",
+  "v1": [
+    {
+      "question": "What does cancel_order() return when the order has already shipped?",
+      "answer": "Based on the provided code and documentation, there is no mention of a `cancel_order()` function or what it returns."
+    },
+    {
+      "question": "How does calculate_gst() round the tax amount?",
+      "answer": "Based on the provided passages, there is no mention of a function named `calculate_gst()`."
+    },
+    {
+      "question": "What does send_password_reset_email() put in the email?",
+      "answer": "Based on the provided passages, there is no mention of a function named `send_password_reset_email()` or what it puts in an email. The only email-related function shown is `send_email()`, which sends an email with the provided `to`, `subject`, and `body` [1]."
+    },
+    {
+      "question": "What happens in apply_gift_card() when the card balance is lower than the order total?",
+      "answer": "Based on the provided codebase, there is no mention of `apply_gift_card()`."
+    },
+    {
+      "question": "How does stack_coupons() decide the order in which coupons are applied?",
+      "answer": "The provided passages do not contain a function named `stack_coupons()`. However, the maximum number of coupons permitted per order is limited to one (`MAX_COUPONS_PER_ORDER = 1`) [1, 2]."
+    },
+    {
+      "question": "What does refund_partial() do with the coupon discount?",
+      "answer": "Based on the provided passages, there is no mention of a function named `refund_partial()` or how it handles coupon discounts."
+    },
+    {
+      "question": "What does get_wishlist() return for a new customer?",
+      "answer": "Based on the provided passages, there is no mention of a `get_wishlist()` function or wishlist functionality."
+    },
+    {
+      "question": "Which exchange rate does convert_currency() use?",
+      "answer": "Based on the provided passages, there is no mention of `convert_currency()`."
+    },
+    {
+      "question": "How does reserve_stock_for_cart() handle two carts asking for the last unit?",
+      "answer": "Two checkouts running at the same moment can both pass the check for the last unit because `reserve_for_order` reads the available count and then writes the new reserved count [2]."
+    },
+    {
+      "question": "Who does notify_low_stock() send its alert to?",
+      "answer": "Based on the provided passages, there is no mention of a function named `notify_low_stock()`."
+    }
+  ],
+  "naive": [
+    {
+      "question": "What does cancel_order() return when the order has already shipped?",
+      "answer": "Based on the provided codebase, there is no function named `cancel_order()` in the passages. However, the available code does specify the rules and statuses for orders:\n\n1. **Order Status Lifecycle** (`shoplite/docs/data-model.md`):\n   `pending_payment` → `paid` → `shipped`, or `pending_payment` → `payment_failed`. Paid and shipped orders can become `refunded`.\n\n2. **Shipping Restrictions** (`shoplite/services/shipping.py`):\n   An order must have a status of `paid` to be shipped (`STATUS_PAID`); otherwise, a `Conflict` exception is raised with the code `SL-ORD-409`.\n\n3. **Refund Restrictions** (`shoplite/services/refunds.py`):\n   Orders that have already been shipped (status `STATUS_SHIPPED`) are eligible for refunds along with paid orders."
+    },
+    {
+      "question": "How does calculate_gst() round the tax amount?",
+      "answer": "Based on the provided passages, there is no mention of a function named `calculate_gst()`."
+    },
+    {
+      "question": "What does send_password_reset_email() put in the email?",
+      "answer": "Based on the provided passages, there is no mention of a function named `send_password_reset_email()` or its implementation. The passages only contain the definition for `send_email` (which appends `{\"to\": to, \"subject\": subject, \"body\": body}` to an outbox) and other functions related to user authentication, password hashing, and seeding users."
+    },
+    {
+      "question": "What happens in apply_gift_card() when the card balance is lower than the order total?",
+      "answer": "Based on the provided codebase, there is no mention of `apply_gift_card()` or gift cards. The codebase handles discount codes via **coupons** (applied via `POST /cart/coupons` or `apply_coupon()`), but does not contain functionality or endpoints for gift cards."
+    },
+    {
+      "question": "How does stack_coupons() decide the order in which coupons are applied?",
+      "answer": "Based on the provided codebase passages, there is no mention or implementation of a function named `stack_coupons()`. \n\nHowever, looking at the coupon services in `shoplite/shoplite/services/coupons.py`, stacking multiple coupons is explicitly restricted by the constant `MAX_COUPONS_PER_ORDER = 1`, and attempting to apply more than one coupon raises a conflict error:\n\n```python\nif len(cart.coupons) >= MAX_COUPONS_PER_ORDER:\n    raise Conflict(\"only one coupon can be used per order\", code=\"SL-CPN-409\")\n```"
+    },
+    {
+      "question": "What does refund_partial() do with the coupon discount?",
+      "answer": "Based on the provided codebase passages, there is no mention or implementation of a function called `refund_partial()`. The codebase includes an admin refund feature that refunds an order in full (via `refund_order` in `shoplite/shoplite/api/payments.py` and `refund` in `shoplite/shoplite/payments/gateway.py`), but partial refunds are not documented or defined in the provided passages."
+    },
+    {
+      "question": "What does get_wishlist() return for a new customer?",
+      "answer": "Based on the provided codebase passages, there is no mention of a `get_wishlist()` function or a wishlist feature. Therefore, the passages do not contain information to answer what `get_wishlist()` returns for a new customer."
+    },
+    {
+      "question": "Which exchange rate does convert_currency() use?",
+      "answer": "Based on the provided codebase passages, there is no mention of a `convert_currency()` function or any exchange rates. The codebase deals exclusively with Indian Rupees (INR) using integer paise, as noted in `shoplite/shoplite/utils/money.py`: *\"All amounts are integer paise (100 paise = 1 rupee); never floats.\"*"
+    },
+    {
+      "question": "How does reserve_stock_for_cart() handle two carts asking for the last unit?",
+      "answer": "Based on the provided codebase, the function responsible for holding stock for an order is `reserve_for_order` (located in `shoplite/shoplite/services/stock.py`). \n\nAccording to the code comment in `reserve_for_order`, it handles concurrent checkouts by reading the available count before writing the new reserved count, meaning two checkouts running at the exact same moment can both pass the check for the last unit:\n\n```python\n# Reads the available count, then writes the new reserved count. Two checkouts\n# running at the same moment can both pass the check for the last unit.\ndef reserve_for_order(order: Order) -> None:\n    \"\"\"Hold stock for every line of an order, or raise OutOfStock.\"\"\"\n    expires_at = clock.utcnow() + RESERVATION_TTL\n    for line in order.items:\n        item = get_inventory(line.product_id)\n        if item.on_hand - item.reserved < line.quantity:\n            raise OutOfStock(f\"only {item.on_hand - item.reserved} left of {line.product.sku}\",\n                             details={\"sku\": line.product.sku})\n        item.reserved += line.quantity\n        db.session.add(ReservationEntry(product_id=line.product_id, order_id=order.id,\n                                        quantity=line.quantity, expires_at=expires_at))\n```"
+    },
+    {
+      "question": "Who does notify_low_stock() send its alert to?",
+      "answer": "Based on the provided codebase passages, there is no mention of a function named `notify_low_stock()`. The passages only document the low-stock report endpoint (`low_stock` in `shoplite/shoplite/api/reports.py` and `shoplite/shoplite/services/reports.py`), which returns products with sellable stock at or below a given threshold, but does not send an alert."
+    }
+  ]
+}

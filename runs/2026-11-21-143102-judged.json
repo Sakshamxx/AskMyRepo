@@ -1,0 +1,1116 @@
+{
+  "run_file": "../faculty/2026-11-19-010753-answers-agent.json",
+  "judge_model": "gemini-3.5-flash-lite",
+  "quote_required": true,
+  "all_questions": {
+    "faithfulness": 0.906,
+    "answer_relevance": 0.938,
+    "context_precision": 0.261,
+    "context_recall": 0.833
+  },
+  "answerable_only": {
+    "faithfulness": 0.906,
+    "answer_relevance": 0.917,
+    "context_precision": 0.261,
+    "context_recall": 0.833
+  },
+  "usage": {
+    "input_tokens": 129612,
+    "output_tokens": 4403,
+    "thinking_tokens": 0,
+    "cached_tokens": 0
+  },
+  "new_model_calls": 39,
+  "rows": [
+    {
+      "id": "Q01",
+      "answerable": true,
+      "claims_supported": [
+        false
+      ],
+      "faithfulness": 0.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Failed payments keep their holds until they expire (see stock.RESERVATION_TTL)."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2,
+          3
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q02",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.4,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "FLAT_RATE_PAISE = 4_900  # ₹49"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "FREE_SHIPPING_FROM_PAISE = 99_900  # free on ₹999 and above, after discounts"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          2,
+          5
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q03",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Hash a password with PBKDF2-SHA256 and a random salt."
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "pbkdf2:sha256:<iterations>$<salt>$<digest>; never the password."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2,
+          3
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q04",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "only one coupon can be used per order"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          6
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q05",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "__tablename__ = \"coupon_redemption_log\""
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          5
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q06",
+      "answerable": true,
+      "claims_supported": [
+        false
+      ],
+      "faithfulness": 0.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.3,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "db.session.add(ReservationEntry(product_id=line.product_id, order_id=order.id,\n                                        quantity=line.quantity, expires_at=expires_at))"
+          }
+        ],
+        "answers_question": "partly",
+        "relevant_sources": [
+          1,
+          2,
+          8
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q07",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.6,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "raise GatewayUnavailable(\"payment gateway timed out\")"
+          }
+        ],
+        "answers_question": "partly",
+        "relevant_sources": [
+          1,
+          2,
+          4
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q08",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "unit_price_paise: Mapped[int] = mapped_column(\n        comment=\"Price when ordered; later price changes don't touch old orders.\"\n    )"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q09",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.3,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "warehouse_client.py pushes stock changes to the shoplite-warehouse service."
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "With SHOPLITE_WAREHOUSE_URL=fake (the default) levels are kept in memory, so"
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "A failed push is logged and counted, and never fails the request."
+          }
+        ],
+        "answers_question": "partly",
+        "relevant_sources": [
+          2,
+          6,
+          7
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q10",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "return f\"SL-{created_at:%Y%m%d}-{order_id:06d}\""
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q11",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.3,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Product reviews: only customers who bought a product can review it."
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "True if the user has a paid or shipped order containing the product."
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "Save a review; one per customer per product."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          4,
+          6,
+          9
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q12",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        false
+      ],
+      "faithfulness": 0.6666666666666666,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2857142857142857,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['FIT-0002', 'Adjustable Dumbbells 10kg Pair', 6, 0, 6]"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "Products with sellable stock at or below ?threshold= (default 5)."
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "Products with sellable stock at or below ?threshold= (default 5)."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          6
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q13",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "gateway.refund(payment.gateway_ref, payment.amount_paise)\n    payment.status = PAYMENT_REFUNDED"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "for item in order.items:\n        stock.return_to_stock(item.product_id, item.quantity)"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          3
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q14",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "ttl = timedelta(hours=current_app.config[\"SHOPLITE_TOKEN_TTL_HOURS\"])"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "SHA-256 of the token; the raw token is never stored."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          5,
+          6
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q15",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.2,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "SHOPLITE_FAULT_SLOW_QUERY        \"on\" (1500 ms) or a delay in ms on catalog and report queries"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "SHOPLITE_FAULT_GATEWAY_ERRORS    \"on\" (every charge) or a 0-1 rate of charges that time out"
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "SHOPLITE_FAULT_RESERVATION_LEAK  \"on\" stops expired stock holds from being released"
+          }
+        ],
+        "answers_question": "partly",
+        "relevant_sources": [
+          1
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q16",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 0.5,
+      "context_precision": 0.6,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "code = \"SL-PAY-402\""
+          }
+        ],
+        "answers_question": "partly",
+        "relevant_sources": [
+          1,
+          2,
+          5
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q17",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "MAX_QUANTITY_PER_LINE = 20"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          9,
+          11,
+          12
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q18",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "stock cannot go below zero or below the units held for orders"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          9
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q19",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.4,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "pending_payment, paid, payment_failed, shipped or refunded."
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "pending_payment → paid → shipped, or pending_payment → payment_failed."
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "pending_payment → paid → shipped"
+          },
+          {
+            "claim": 4,
+            "supported": true,
+            "quote": "Paid and shipped orders can become refunded."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q20",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "batch_op.add_column(sa.Column('reserved', sa.Integer(), nullable=False, server_default='0', comment='Units held for orders awaiting payment. Sellable = on_hand - reserved.'))"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          3
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q21",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.1,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "INSERT INTO stock_levels (sku, on_hand, updated_at)"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "INSERT INTO sync_log (sku, old_on_hand, new_on_hand, received_at)"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          8
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q22",
+      "answerable": true,
+      "claims_supported": [
+        false,
+        true
+      ],
+      "faithfulness": 0.5,
+      "answer_relevance": 1.0,
+      "context_precision": 0.3,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Paid: commit the holds (stock leaves on_hand)"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "Turn an order's holds into sales: the units leave stock."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2,
+          6
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q23",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "return {\"sku\": sku, \"on_hand\": item.on_hand, \"reserved\": item.reserved,\n            \"sellable\": item.on_hand - item.reserved, \"warehouse_on_hand\": warehouse_on_hand}"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "except warehouse_client.WarehouseUnavailable:\n        warehouse_on_hand = None"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          2
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q24",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Admin sales and stock reports in SQL, using bound parameters (:name), never string formatting."
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q25",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.16666666666666666,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['paid', 25]"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "['payment_failed', 31]"
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "['refunded', 13]"
+          },
+          {
+            "claim": 4,
+            "supported": true,
+            "quote": "['shipped', 131]"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          6
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q26",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.08333333333333333,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['SHIPFREE', 15, 73500]"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "['SHIPFREE', 15, 73500]"
+          },
+          {
+            "claim": 3,
+            "supported": true,
+            "quote": "['SHIPFREE', 15, 73500]"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          7
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q27",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.14285714285714285,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['FIT-0001', 'Yoga Mat 6mm', 'Fitness', 33, 3296700]"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          7
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q28",
+      "answerable": true,
+      "claims_supported": [
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.16666666666666666,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "Electronics Accessories"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          6
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q29",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.125,
+      "context_recall": 1.0,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['2026-10', 33, 12204345]"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "['2026-10', 33, 12204345]"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          7
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q30",
+      "answerable": true,
+      "claims_supported": [
+        true,
+        true
+      ],
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "context_precision": 0.16666666666666666,
+      "context_recall": 0.5,
+      "judgement": {
+        "claims": [
+          {
+            "claim": 1,
+            "supported": true,
+            "quote": "['declined', 'SL-PAY-402', 26]"
+          },
+          {
+            "claim": 2,
+            "supported": true,
+            "quote": "['declined', 'SL-PAY-402', 26]"
+          }
+        ],
+        "answers_question": "yes",
+        "relevant_sources": [
+          6
+        ],
+        "reference_found": "some"
+      }
+    },
+    {
+      "id": "Q31",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2,
+          16,
+          20
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q32",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2
+        ],
+        "reference_found": "none"
+      }
+    },
+    {
+      "id": "Q33",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [],
+        "reference_found": "none"
+      }
+    },
+    {
+      "id": "Q34",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [],
+        "reference_found": "none"
+      }
+    },
+    {
+      "id": "Q35",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q36",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q37",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          3,
+          5
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q38",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          1,
+          2
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q39",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [
+          3
+        ],
+        "reference_found": "all"
+      }
+    },
+    {
+      "id": "Q40",
+      "answerable": false,
+      "claims_supported": [],
+      "faithfulness": null,
+      "answer_relevance": 1.0,
+      "context_precision": null,
+      "context_recall": null,
+      "judgement": {
+        "claims": [],
+        "answers_question": "yes",
+        "relevant_sources": [],
+        "reference_found": "all"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "experiment": "chunk size and overlap; answer-in-passage = a returned passage contains a code line the answer key relies on (faculty FACTS)",
+  "results": {
+    "syntax": {
+      "chunks": 313,
+      "file_recall": "23/30",
+      "answer_in_passage": "22/25",
+      "chars_sent_mean": 4430,
+      "answer_misses": [
+        "Q11",
+        "Q19",
+        "Q21"
+      ]
+    },
+    "fixed-20-overlap-0": {
+      "chunks": 233,
+      "file_recall": "25/30",
+      "answer_in_passage": "20/25",
+      "chars_sent_mean": 4001,
+      "answer_misses": [
+        "Q01",
+        "Q05",
+        "Q19",
+        "Q21",
+        "Q30"
+      ]
+    },
+    "fixed-40-overlap-0": {
+      "chunks": 134,
+      "file_recall": "25/30",
+      "answer_in_passage": "25/25",
+      "chars_sent_mean": 6870,
+      "answer_misses": []
+    },
+    "fixed-40-overlap-10": {
+      "chunks": 144,
+      "file_recall": "25/30",
+      "answer_in_passage": "24/25",
+      "chars_sent_mean": 7412,
+      "answer_misses": [
+        "Q22"
+      ]
+    },
+    "fixed-80-overlap-0": {
+      "chunks": 85,
+      "file_recall": "26/30",
+      "answer_in_passage": "25/25",
+      "chars_sent_mean": 11057,
+      "answer_misses": []
+    },
+    "fixed-80-overlap-20": {
+      "chunks": 87,
+      "file_recall": "27/30",
+      "answer_in_passage": "25/25",
+      "chars_sent_mean": 11134,
+      "answer_misses": []
+    }
+  }
+}

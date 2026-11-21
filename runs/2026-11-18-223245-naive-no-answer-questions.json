@@ -1,0 +1,55 @@
+{
+  "system": "naive prompt: You are a helpful assistant for the ShopLite codebase. Answer the question; the passages below are from the code.",
+  "rows": [
+    {
+      "id": "Q31",
+      "question": "How does ShopLite store a customer's wishlist?",
+      "answer": "Based on the provided codebase documentation and files, there is no mention of a wishlist feature in ShopLite. ShopLite supports a shopping cart (`/cart` endpoints) and customer accounts, but wishlists are not listed in the API endpoints or documentation."
+    },
+    {
+      "id": "Q32",
+      "question": "How many loyalty points does a ₹1,000 order earn?",
+      "answer": "Based on the provided ShopLite codebase and API documentation, there is no mention of loyalty points. ShopLite uses integer **paise** (₹1 = 100 paise) for amounts [1], but does not implement a loyalty points system."
+    },
+    {
+      "id": "Q33",
+      "question": "How does ShopLite convert prices to US dollars?",
+      "answer": "Based on the provided documentation, ShopLite does not convert prices to US dollars. The API documentation specifies that amounts are handled in integer **paise** (where ₹1 = 100 paise) [1]."
+    },
+    {
+      "id": "Q34",
+      "question": "How are size variants of a product stocked?",
+      "answer": "Based on the provided codebase passages, there is no mention or implementation of size variants for products. Inventory management is handled per product SKU using the `InventoryItem` model, where stock is tracked via `on_hand` and `reserved` counts (as seen in `shoplite/shoplite/services/stock.py` and `shoplite/shoplite/api/admin.py`)."
+    },
+    {
+      "id": "Q35",
+      "question": "How does cash-on-delivery checkout skip the payment gateway?",
+      "answer": "Based on the provided passages, there is no mention of a cash-on-delivery checkout feature or how it skips the payment gateway. The codebase uses a fake payment gateway (`payments/gateway.py`) during the checkout process (`services/checkout.py`), and all checkouts go through the defined steps which include charging the gateway."
+    },
+    {
+      "id": "Q36",
+      "question": "Which endpoint lets a customer cancel their own order?",
+      "answer": "Based on the provided API documentation (`shoplite/docs/api.md`), there is **no endpoint** that lets a customer cancel their own order. \n\nThe available order-related endpoints for customers are:\n- `POST /orders` (Check out: `payment_token`, `shipping_pincode`)\n- `GET /orders` (Your orders, newest first)\n- `GET /orders/<id>` (One order, for owner or admin)\n- `GET /orders/<id>/payments` (Charge attempts for the order, for owner or admin)\n\nThe only refund/cancellation mechanism listed is `POST /orders/<id>/refund`, which can only be performed by an **admin** for a full refund."
+    },
+    {
+      "id": "Q37",
+      "question": "How does the reset-password email work?",
+      "answer": "Based on the provided codebase passages, there is no implementation of a password reset feature or a reset-password email in the provided files. \n\nHowever, the codebase does contain a stubbed email functionality (`send_email` in `shoplite/shoplite/notifications/email.py`) [5] and authentication service functions like `hash_password`, `verify_password`, and `register_user` [2, 3, 4], but no logic for generating password reset tokens, endpoints, or sending reset-password emails is present in the provided passages."
+    },
+    {
+      "id": "Q38",
+      "question": "Where are product images stored?",
+      "answer": "Based on the provided codebase documentation and models, there is no mention or field indicating where product images are stored. The `products` table in the data model holds the catalog with columns such as `sku`, `price_paise`, and `is_active` [2], but product images are not referenced."
+    },
+    {
+      "id": "Q39",
+      "question": "How is GST added to the order total at checkout?",
+      "answer": "Based on the provided codebase passages, GST is **not** mentioned or added as a component of the order total during checkout or pricing calculations. \n\nThe order total is calculated using the components defined in the `PriceQuote` and `create_order` functions [2, 5]:\n* Subtotal (`subtotal_paise`)\n* Discount (`discount_paise`)\n* Shipping (`shipping_paise`)\n* Total (`total_paise`)"
+    },
+    {
+      "id": "Q40",
+      "question": "What is the API's rate limit per customer?",
+      "answer": "Based on the provided ShopLite API documentation and codebase passages, there is no mention of a rate limit per customer for the API endpoints."
+    }
+  ]
+}

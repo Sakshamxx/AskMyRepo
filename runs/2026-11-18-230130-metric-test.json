@@ -1,0 +1,14 @@
+{
+  "metric_test": "same vectors, three metrics, top 5 for 30 questions (newest version)",
+  "euclidean": {
+    "same_order_as_cosine": 28,
+    "same_five_as_cosine": 28,
+    "recall": 23
+  },
+  "dotproduct": {
+    "same_order_as_cosine": 27,
+    "same_five_as_cosine": 30,
+    "recall": 23
+  },
+  "cosine_recall": 23
+}

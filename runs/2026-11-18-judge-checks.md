@@ -1,0 +1,10 @@
+# Checks on our own judge (2026-11-18)
+
+Judge: `judge.py`, gemini-3.5-flash-lite, on the agent's answers (`runs/2026-11-18-211729-answers-agent.json`), compared with the first judging run (`runs/2026-11-18-212433-judged.json`).
+
+1. **Does the reference answer leak into "supported"?** No. Re-judged without the reference answer, Q01 claim 1 and Q06 claim 1 were still marked supported (the two claims the hand labels reject). The leniency is in how the judge treats a claim that is only partly in its source.
+2. **Is the judge consistent?** Ten answers (Q01-Q10) judged again from scratch (key 2; key 1 had reached the free tier's 500 requests a day for this model): claim verdicts changed for 0 of 10, "answers the question" for 0 of 10, "reference found" for 1 of 10, the list of relevant sources for 2 of 10. A first attempt on key 1, cut off by the quota after four answers, showed the same pattern (Q02 "reference found" some -> all; Q04 relevant sources [6, 11, 12] -> [11, 12]).
+3. **Faithful but wrong (Q28).** The agent's SQL left out the status filter, so failed and refunded orders were counted: "Kitchen, 20,703,000 paise". Sales count only paid and shipped orders (the reporting views and `services/reports.py`), so the right answer is Electronics Accessories, 17,029,900. The judge marked the claim supported (it matches the query's result) and the answer as answering the question. Only "reference found: none" hints at it. The judge has no measure of correctness against the reference.
+4. **Refusals distort two averages.** For the 10 no-answer questions, "reference found" was "all" for 6 and "none" for 4, and "relevant sources" was scored too; neither means anything when the right answer is a refusal, yet both are in the "all questions" averages.
+5. **Context precision measures the agent's exploring, not retrieval.** The agent saw 5 to 20 sources per answer (more searches, more sources), so a low precision (0.224) mostly reflects how many searches it made.
+6. **Not done:** judging with a different model (gemini-3.1-flash-lite) to check whether the judge favours its own model's answers; Gemini answered 503 "high demand". To retry.

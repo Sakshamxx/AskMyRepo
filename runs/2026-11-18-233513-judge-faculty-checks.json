@@ -1,0 +1,41 @@
+{
+  "second_model": {
+    "model": "gemini-3.1-flash-lite",
+    "labels": {
+      "Q01#1": false,
+      "Q02#1": true,
+      "Q03#1": true,
+      "Q04#1": true,
+      "Q06#1": false,
+      "Q07#1": true,
+      "Q08#1": true,
+      "Q09#1": true,
+      "Q10#1": true,
+      "Q11#1": true,
+      "Q12#1": true,
+      "Q13#1": true,
+      "Q14#1": true,
+      "Q15#1": true,
+      "Q16#1": true,
+      "Q17#1": true,
+      "Q18#1": true,
+      "Q19#1": true,
+      "Q20#1": true
+    },
+    "disagreement": {
+      "checked": 19,
+      "disagreed": 0,
+      "rate": 0.0,
+      "which": []
+    }
+  },
+  "temperature_0": {
+    "answers_compared": 10,
+    "changed": {
+      "claims": 0,
+      "answers": 0,
+      "found": 0,
+      "relevant": 5
+    }
+  }
+}

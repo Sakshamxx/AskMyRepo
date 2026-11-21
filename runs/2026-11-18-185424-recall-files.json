@@ -1,0 +1,339 @@
+{
+  "top_k": 5,
+  "questions": 10,
+  "hits": 10,
+  "recall": 1.0,
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What happens to a customer's stock hold if their card is declined?",
+      "hit": true,
+      "seconds": 3.226,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/stock.py:1-112",
+          "symbol": "",
+          "score": 0.3547
+        },
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-44",
+          "symbol": "",
+          "score": 0.3461
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:1-93",
+          "symbol": "",
+          "score": 0.3455
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:1-46",
+          "symbol": "",
+          "score": 0.3203
+        },
+        {
+          "location": "shoplite/shoplite/models/payment.py:1-43",
+          "symbol": "",
+          "score": 0.3134
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "How much does shipping cost, and when is it free?",
+      "hit": true,
+      "seconds": 0.428,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/shipping.py:1-43",
+          "symbol": "",
+          "score": 0.5472
+        },
+        {
+          "location": "shoplite/shoplite/services/pricing.py:1-47",
+          "symbol": "",
+          "score": 0.4089
+        },
+        {
+          "location": "shoplite/migrations/versions/0002_add_coupons_reviews_shipments.py:1-123",
+          "symbol": "",
+          "score": 0.3825
+        },
+        {
+          "location": "shoplite/shoplite/models/shipment.py:1-31",
+          "symbol": "",
+          "score": 0.3643
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:1-46",
+          "symbol": "",
+          "score": 0.3433
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "How are customer passwords stored?",
+      "hit": true,
+      "seconds": 0.367,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/models/user.py:1-56",
+          "symbol": "",
+          "score": 0.4011
+        },
+        {
+          "location": "shoplite/shoplite/services/auth.py:1-88",
+          "symbol": "",
+          "score": 0.3668
+        },
+        {
+          "location": "shoplite/docs/data-model.md:1-47",
+          "symbol": "",
+          "score": 0.3599
+        },
+        {
+          "location": "shoplite/shoplite/notifications/__init__.py:1-1",
+          "symbol": "",
+          "score": 0.3398
+        },
+        {
+          "location": "shoplite/shoplite/api/auth.py:1-44",
+          "symbol": "",
+          "score": 0.2886
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "How many coupons can a customer use on one order?",
+      "hit": true,
+      "seconds": 0.639,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/coupons.py:1-101",
+          "symbol": "",
+          "score": 0.6142
+        },
+        {
+          "location": "shoplite/shoplite/models/coupon.py:1-61",
+          "symbol": "",
+          "score": 0.5385
+        },
+        {
+          "location": "shoplite/shoplite/api/coupons.py:1-61",
+          "symbol": "",
+          "score": 0.5082
+        },
+        {
+          "location": "shoplite/migrations/versions/0002_add_coupons_reviews_shipments.py:1-123",
+          "symbol": "",
+          "score": 0.4487
+        },
+        {
+          "location": "shoplite/shoplite/services/pricing.py:1-47",
+          "symbol": "",
+          "score": 0.4257
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "Which table records each time a coupon is used?",
+      "hit": true,
+      "seconds": 0.39,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/coupons.py:1-101",
+          "symbol": "",
+          "score": 0.5871
+        },
+        {
+          "location": "shoplite/shoplite/models/coupon.py:1-61",
+          "symbol": "",
+          "score": 0.5705
+        },
+        {
+          "location": "shoplite/shoplite/api/coupons.py:1-61",
+          "symbol": "",
+          "score": 0.4641
+        },
+        {
+          "location": "shoplite/sql/reporting_views.sql:1-38",
+          "symbol": "",
+          "score": 0.4365
+        },
+        {
+          "location": "shoplite/migrations/versions/0002_add_coupons_reviews_shipments.py:1-123",
+          "symbol": "",
+          "score": 0.4242
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "Where is inv_reservation_ledger written to?",
+      "hit": true,
+      "seconds": 0.428,
+      "returned": [
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:1-58",
+          "symbol": "",
+          "score": 0.5922
+        },
+        {
+          "location": "shoplite/shoplite/models/inventory.py:1-45",
+          "symbol": "",
+          "score": 0.5256
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:1-112",
+          "symbol": "",
+          "score": 0.4613
+        },
+        {
+          "location": "shoplite/docs/data-model.md:1-47",
+          "symbol": "",
+          "score": 0.3635
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:1-46",
+          "symbol": "",
+          "score": 0.3114
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "What does the payment gateway do with the test card token tok_gateway_down?",
+      "hit": true,
+      "seconds": 0.425,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-44",
+          "symbol": "",
+          "score": 0.6369
+        },
+        {
+          "location": "shoplite/shoplite/payments/__init__.py:1-1",
+          "symbol": "",
+          "score": 0.4838
+        },
+        {
+          "location": "shoplite/shoplite/models/payment.py:1-43",
+          "symbol": "",
+          "score": 0.4238
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:1-93",
+          "symbol": "",
+          "score": 0.3825
+        },
+        {
+          "location": "shoplite/docs/api.md:1-70",
+          "symbol": "",
+          "score": 0.379
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "Which column stores the price a customer paid for a product in an order?",
+      "hit": true,
+      "seconds": 0.388,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/models/order.py:1-95",
+          "symbol": "",
+          "score": 0.5033
+        },
+        {
+          "location": "shoplite/docs/data-model.md:1-47",
+          "symbol": "",
+          "score": 0.4808
+        },
+        {
+          "location": "shoplite/sql/reporting_views.sql:1-38",
+          "symbol": "",
+          "score": 0.4589
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:1-93",
+          "symbol": "",
+          "score": 0.4538
+        },
+        {
+          "location": "shoplite/shoplite/services/pricing.py:1-47",
+          "symbol": "",
+          "score": 0.4435
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "How does ShopLite tell the warehouse service about a stock change, and what happens if the warehouse is down?",
+      "hit": true,
+      "seconds": 0.391,
+      "returned": [
+        {
+          "location": "shoplite-warehouse/README.md:1-38",
+          "symbol": "",
+          "score": 0.6251
+        },
+        {
+          "location": "shoplite/docs/architecture.md:1-42",
+          "symbol": "",
+          "score": 0.607
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:1-46",
+          "symbol": "",
+          "score": 0.5994
+        },
+        {
+          "location": "shoplite/docs/api.md:1-70",
+          "symbol": "",
+          "score": 0.5575
+        },
+        {
+          "location": "shoplite/shoplite/warehouse_client.py:1-65",
+          "symbol": "",
+          "score": 0.5283
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "What format do customer-facing order numbers use?",
+      "hit": true,
+      "seconds": 0.384,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/utils/ids.py:1-20",
+          "symbol": "",
+          "score": 0.4815
+        },
+        {
+          "location": "shoplite/shoplite/models/order.py:1-95",
+          "symbol": "",
+          "score": 0.3862
+        },
+        {
+          "location": "shoplite/shoplite/notifications/__init__.py:1-1",
+          "symbol": "",
+          "score": 0.3793
+        },
+        {
+          "location": "shoplite/shoplite/services/shipping.py:1-43",
+          "symbol": "",
+          "score": 0.3746
+        },
+        {
+          "location": "shoplite/shoplite/api/orders.py:1-45",
+          "symbol": "",
+          "score": 0.3449
+        }
+      ]
+    }
+  ],
+  "chunking": "files"
+}

@@ -1,0 +1,9 @@
+{
+  "question": "How does reserve_stock_for_cart() handle two carts asking for the last unit?",
+  "system": "v1 prompt",
+  "answers": [
+    "The provided passages do not contain a function named `reserve_stock_for_cart()`. However, for `reserve_for_order(order: Order)`, the code reads the available count and then writes the new reserved count, meaning two checkouts running at the same moment can both pass the check for the last unit [2].",
+    "Based on the provided code, `reserve_for_order` reads the available count and then writes the new reserved count, meaning two concurrent checkouts can both pass the check for the last unit [2].",
+    "Two checkouts running at the same moment can both pass the check for the last unit because `reserve_for_order` reads the available count and then writes the new reserved count [2]."
+  ]
+}

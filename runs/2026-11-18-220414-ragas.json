@@ -1,0 +1,329 @@
+{
+  "skipped": [
+    "Q03",
+    "Q04",
+    "Q07",
+    "Q09",
+    "Q10",
+    "Q14",
+    "Q15",
+    "Q25",
+    "Q27"
+  ],
+  "answers_run": "runs/2026-11-18-211729-answers-agent.json",
+  "judged_run": "runs/2026-11-18-212433-judged.json",
+  "model": "gemini-3.5-flash-lite",
+  "ragas_version": "0.4.4",
+  "summary": {
+    "faithfulness": {
+      "questions": 21,
+      "ragas": 0.865,
+      "ours": 0.96
+    },
+    "context_recall": {
+      "questions": 21,
+      "ragas": 0.869,
+      "ours": 0.81
+    },
+    "context_precision": {
+      "questions": 5,
+      "ragas": 0.455,
+      "ours": 0.32
+    }
+  },
+  "rows": [
+    {
+      "id": "Q01",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.9999999999666667
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.6
+      }
+    },
+    {
+      "id": "Q02",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.4499999999775
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.4
+      }
+    },
+    {
+      "id": "Q03",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q04",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q05",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.32499999998375
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q06",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q07",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q08",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.49999999995
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q09",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q10",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q11",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.3
+      }
+    },
+    {
+      "id": "Q12",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 0.6666666666666666,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q13",
+      "ragas": {
+        "faithfulness": 0.5,
+        "context_recall": 0.75
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q14",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q15",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q16",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.4
+      }
+    },
+    {
+      "id": "Q17",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.06666666666666667
+      }
+    },
+    {
+      "id": "Q18",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.1
+      }
+    },
+    {
+      "id": "Q19",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.4
+      }
+    },
+    {
+      "id": "Q20",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5,
+        "context_precision": 0.6
+      }
+    },
+    {
+      "id": "Q21",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q22",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5
+      },
+      "ours": {
+        "faithfulness": 0.5,
+        "context_recall": 1.0,
+        "context_precision": 0.3
+      }
+    },
+    {
+      "id": "Q23",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q24",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.2
+      }
+    },
+    {
+      "id": "Q25",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q26",
+      "ragas": {
+        "faithfulness": 0.0,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.16666666666666666
+      }
+    },
+    {
+      "id": "Q27",
+      "skipped": "model unavailable after retries"
+    },
+    {
+      "id": "Q28",
+      "ragas": {
+        "faithfulness": 0.0,
+        "context_recall": 0.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 0.0,
+        "context_precision": 0.08333333333333333
+      }
+    },
+    {
+      "id": "Q29",
+      "ragas": {
+        "faithfulness": 0.6666666666666666,
+        "context_recall": 1.0
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.07142857142857142
+      }
+    },
+    {
+      "id": "Q30",
+      "ragas": {
+        "faithfulness": 1.0,
+        "context_recall": 0.5
+      },
+      "ours": {
+        "faithfulness": 1.0,
+        "context_recall": 1.0,
+        "context_precision": 0.16666666666666666
+      }
+    }
+  ]
+}

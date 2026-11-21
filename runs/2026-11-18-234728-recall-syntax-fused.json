@@ -1,0 +1,1003 @@
+{
+  "top_k": 5,
+  "questions": 30,
+  "hits": 23,
+  "recall": 0.767,
+  "rows": [
+    {
+      "id": "Q01",
+      "question": "What happens to a customer's stock hold if their card is declined?",
+      "hit": true,
+      "seconds": 0.4,
+      "returned": [
+        {
+          "location": "shoplite/docs/architecture.md:17-26",
+          "symbol": "Checkout",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-8",
+          "symbol": "",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:43-93",
+          "symbol": "checkout",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0304
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:1-21",
+          "symbol": "",
+          "score": 0.0299
+        }
+      ]
+    },
+    {
+      "id": "Q02",
+      "question": "How much does shipping cost, and when is it free?",
+      "hit": true,
+      "seconds": 0.41,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/shipping.py:1-13",
+          "symbol": "",
+          "score": 0.0318
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:24-31",
+          "symbol": "Added",
+          "score": 0.0313
+        },
+        {
+          "location": "shoplite/shoplite/services/shipping.py:24-28",
+          "symbol": "shipping_rate_for",
+          "score": 0.0296
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:32-35",
+          "symbol": "Changed",
+          "score": 0.0287
+        },
+        {
+          "location": "shoplite/shoplite/services/pricing.py:1-7",
+          "symbol": "",
+          "score": 0.0276
+        }
+      ]
+    },
+    {
+      "id": "Q03",
+      "question": "How are customer passwords stored?",
+      "hit": true,
+      "seconds": 0.424,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/models/user.py:15-40",
+          "symbol": "User",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/notifications/__init__.py:1-1",
+          "symbol": "",
+          "score": 0.0306
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.03
+        },
+        {
+          "location": "shoplite/shoplite/models/user.py:1-12",
+          "symbol": "",
+          "score": 0.0298
+        },
+        {
+          "location": "shoplite/shoplite/services/auth.py:28-33",
+          "symbol": "verify_password",
+          "score": 0.0297
+        }
+      ]
+    },
+    {
+      "id": "Q04",
+      "question": "How many coupons can a customer use on one order?",
+      "hit": true,
+      "seconds": 0.375,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/coupons.py:1-15",
+          "symbol": "",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:26-31",
+          "symbol": "times_redeemed",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:24-31",
+          "symbol": "Added",
+          "score": 0.0305
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:54-65",
+          "symbol": "apply_coupon",
+          "score": 0.03
+        },
+        {
+          "location": "shoplite/shoplite/models/coupon.py:51-61",
+          "symbol": "CouponRedemption",
+          "score": 0.0283
+        }
+      ]
+    },
+    {
+      "id": "Q05",
+      "question": "Which table records each time a coupon is used?",
+      "hit": false,
+      "seconds": 0.439,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/coupons.py:97-101",
+          "symbol": "record_redemptions",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:26-31",
+          "symbol": "times_redeemed",
+          "score": 0.0313
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:1-15",
+          "symbol": "",
+          "score": 0.0304
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:34-44",
+          "symbol": "check_redeemable",
+          "score": 0.0292
+        },
+        {
+          "location": "shoplite/scripts/seed.py:133-142",
+          "symbol": "pick_coupon",
+          "score": 0.0274
+        }
+      ]
+    },
+    {
+      "id": "Q06",
+      "question": "Where is inv_reservation_ledger written to?",
+      "hit": true,
+      "seconds": 0.354,
+      "returned": [
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:1-16",
+          "symbol": "",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:46-58",
+          "symbol": "downgrade",
+          "score": 0.0318
+        },
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:19-43",
+          "symbol": "upgrade",
+          "score": 0.0311
+        },
+        {
+          "location": "shoplite/shoplite/models/inventory.py:29-45",
+          "symbol": "ReservationEntry",
+          "score": 0.0304
+        },
+        {
+          "location": "shoplite/docs/data-model.md:27-34",
+          "symbol": "Schema history",
+          "score": 0.03
+        }
+      ]
+    },
+    {
+      "id": "Q07",
+      "question": "What does the payment gateway do with the test card token tok_gateway_down?",
+      "hit": true,
+      "seconds": 0.367,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-8",
+          "symbol": "",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:29-37",
+          "symbol": "charge",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.031
+        },
+        {
+          "location": "shoplite/shoplite/payments/__init__.py:1-1",
+          "symbol": "",
+          "score": 0.0302
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:43-93",
+          "symbol": "checkout",
+          "score": 0.029
+        }
+      ]
+    },
+    {
+      "id": "Q08",
+      "question": "Which column stores the price a customer paid for a product in an order?",
+      "hit": true,
+      "seconds": 0.36,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/models/order.py:72-95",
+          "symbol": "OrderItem",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/docs/data-model.md:1-22",
+          "symbol": "Data model",
+          "score": 0.0312
+        },
+        {
+          "location": "shoplite/shoplite/services/reviews.py:11-17",
+          "symbol": "has_bought",
+          "score": 0.0299
+        },
+        {
+          "location": "shoplite/shoplite/api/admin.py:20-28",
+          "symbol": "read_price",
+          "score": 0.0294
+        },
+        {
+          "location": "shoplite/docs/data-model.md:23-26",
+          "symbol": "Order statuses",
+          "score": 0.029
+        }
+      ]
+    },
+    {
+      "id": "Q09",
+      "question": "How does ShopLite tell the warehouse service about a stock change, and what happens if the warehouse is down?",
+      "hit": true,
+      "seconds": 0.423,
+      "returned": [
+        {
+          "location": "shoplite-warehouse/README.md:19-31",
+          "symbol": "API",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/docs/architecture.md:27-31",
+          "symbol": "Other services",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite-warehouse/README.md:1-6",
+          "symbol": "shoplite-warehouse",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite-warehouse/warehouse/__init__.py:1-8",
+          "symbol": "",
+          "score": 0.0301
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:35-38",
+          "symbol": "sync_to_warehouse",
+          "score": 0.0298
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "question": "What format do customer-facing order numbers use?",
+      "hit": true,
+      "seconds": 0.377,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/utils/ids.py:18-20",
+          "symbol": "order_number",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/shoplite/utils/ids.py:1-5",
+          "symbol": "",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/shoplite/models/order.py:21-69",
+          "symbol": "Order",
+          "score": 0.029
+        },
+        {
+          "location": "shoplite/docs/data-model.md:1-22",
+          "symbol": "Data model",
+          "score": 0.0284
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0284
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "question": "Who is allowed to review a product?",
+      "hit": true,
+      "seconds": 0.355,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/reviews.py:1-8",
+          "symbol": "",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/reviews.py:34-37",
+          "symbol": "review_query",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/reviews.py:20-31",
+          "symbol": "add_review",
+          "score": 0.0311
+        },
+        {
+          "location": "shoplite/shoplite/api/reviews.py:23-34",
+          "symbol": "add_review",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/services/reviews.py:40-45",
+          "symbol": "rating_summary",
+          "score": 0.0301
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "question": "Which active product has the least sellable stock in the seeded data, and does the low-stock report list it by default?",
+      "hit": true,
+      "seconds": 0.383,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/reports.py:58-62",
+          "symbol": "low_stock",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/api/reports.py:44-48",
+          "symbol": "low_stock",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:8-16",
+          "symbol": "Added",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite-warehouse/README.md:1-6",
+          "symbol": "shoplite-warehouse",
+          "score": 0.0288
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0288
+        }
+      ]
+    },
+    {
+      "id": "Q13",
+      "question": "What does a refund do to the stock and to the payment?",
+      "hit": true,
+      "seconds": 0.417,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/refunds.py:15-29",
+          "symbol": "refund_order",
+          "score": 0.0325
+        },
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:40-44",
+          "symbol": "refund",
+          "score": 0.0318
+        },
+        {
+          "location": "shoplite/shoplite/api/payments.py:27-34",
+          "symbol": "refund",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/shoplite/services/refunds.py:1-12",
+          "symbol": "",
+          "score": 0.0302
+        },
+        {
+          "location": "shoplite/scripts/seed.py:205-226",
+          "symbol": "add_payment_and_stock",
+          "score": 0.0282
+        }
+      ]
+    },
+    {
+      "id": "Q14",
+      "question": "How long does a login token last, and how is it stored?",
+      "hit": true,
+      "seconds": 0.375,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/models/user.py:43-56",
+          "symbol": "AuthToken",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/api/auth.py:24-29",
+          "symbol": "login",
+          "score": 0.0309
+        },
+        {
+          "location": "shoplite/shoplite/utils/ids.py:13-15",
+          "symbol": "hash_token",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/services/auth.py:70-72",
+          "symbol": "find_token",
+          "score": 0.0303
+        },
+        {
+          "location": "shoplite/shoplite/services/auth.py:56-67",
+          "symbol": "login",
+          "score": 0.0296
+        }
+      ]
+    },
+    {
+      "id": "Q15",
+      "question": "What fault switches exist for incident drills, and what does each do?",
+      "hit": true,
+      "seconds": 0.371,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/faults.py:1-15",
+          "symbol": "",
+          "score": 0.0325
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:8-16",
+          "symbol": "Added",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/README.md:26-44",
+          "symbol": "Layout",
+          "score": 0.0311
+        },
+        {
+          "location": "shoplite/docs/architecture.md:32-39",
+          "symbol": "Operations",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite-warehouse/README.md:32-38",
+          "symbol": "Settings",
+          "score": 0.0306
+        }
+      ]
+    },
+    {
+      "id": "Q16",
+      "question": "What error code does a customer get when their card is declined?",
+      "hit": true,
+      "seconds": 0.374,
+      "returned": [
+        {
+          "location": "shoplite/docs/api.md:46-70",
+          "symbol": "Errors",
+          "score": 0.0318
+        },
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-8",
+          "symbol": "",
+          "score": 0.0317
+        },
+        {
+          "location": "shoplite/shoplite/errors.py:63-67",
+          "symbol": "PaymentDeclined",
+          "score": 0.0301
+        },
+        {
+          "location": "shoplite/shoplite/models/payment.py:17-43",
+          "symbol": "Payment",
+          "score": 0.0297
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0293
+        }
+      ]
+    },
+    {
+      "id": "Q17",
+      "question": "What is the most units of one product a cart can hold?",
+      "hit": true,
+      "seconds": 0.374,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/cart.py:28-42",
+          "symbol": "add_item",
+          "score": 0.0325
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:41-46",
+          "symbol": "Added",
+          "score": 0.0298
+        },
+        {
+          "location": "shoplite/shoplite/models/cart.py:31-43",
+          "symbol": "CartItem",
+          "score": 0.0297
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:29-32",
+          "symbol": "available_units",
+          "score": 0.0296
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0293
+        }
+      ]
+    },
+    {
+      "id": "Q18",
+      "question": "Can an admin reduce stock below the units held for unpaid orders?",
+      "hit": true,
+      "seconds": 0.365,
+      "returned": [
+        {
+          "location": "shoplite/CHANGELOG.md:17-21",
+          "symbol": "Changed",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:103-112",
+          "symbol": "adjust_stock",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:29-32",
+          "symbol": "available_units",
+          "score": 0.0306
+        },
+        {
+          "location": "shoplite/shoplite/api/admin.py:63-69",
+          "symbol": "adjust_inventory",
+          "score": 0.0286
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:92-94",
+          "symbol": "total_reserved_units",
+          "score": 0.0284
+        }
+      ]
+    },
+    {
+      "id": "Q19",
+      "question": "What statuses can an order have, and how does it move between them?",
+      "hit": false,
+      "seconds": 0.374,
+      "returned": [
+        {
+          "location": "shoplite/docs/data-model.md:23-26",
+          "symbol": "Order statuses",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/shipping.py:31-43",
+          "symbol": "ship_order",
+          "score": 0.0279
+        },
+        {
+          "location": "shoplite/shoplite/api/admin.py:101-108",
+          "symbol": "ship_order",
+          "score": 0.0161
+        },
+        {
+          "location": "shoplite-warehouse/README.md:19-31",
+          "symbol": "API",
+          "score": 0.0161
+        },
+        {
+          "location": "shoplite/scripts/seed.py:145-154",
+          "symbol": "pick_status",
+          "score": 0.0159
+        }
+      ]
+    },
+    {
+      "id": "Q20",
+      "question": "Which migration added the reserved column to inventory_items?",
+      "hit": true,
+      "seconds": 0.365,
+      "returned": [
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:19-43",
+          "symbol": "upgrade",
+          "score": 0.0325
+        },
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:46-58",
+          "symbol": "downgrade",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/migrations/versions/0003_add_stock_reservations.py:1-16",
+          "symbol": "",
+          "score": 0.0311
+        },
+        {
+          "location": "shoplite/docs/data-model.md:27-34",
+          "symbol": "Schema history",
+          "score": 0.0305
+        },
+        {
+          "location": "shoplite/shoplite/models/inventory.py:16-26",
+          "symbol": "InventoryItem",
+          "score": 0.0301
+        }
+      ]
+    },
+    {
+      "id": "Q21",
+      "question": "How does the warehouse service store stock levels and their history?",
+      "hit": false,
+      "seconds": 0.362,
+      "returned": [
+        {
+          "location": "shoplite-warehouse/README.md:1-6",
+          "symbol": "shoplite-warehouse",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite-warehouse/warehouse/api.py:62-71",
+          "symbol": "stock_history",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/warehouse_client.py:1-20",
+          "symbol": "",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite-warehouse/README.md:19-31",
+          "symbol": "API",
+          "score": 0.0312
+        },
+        {
+          "location": "shoplite/docs/architecture.md:27-31",
+          "symbol": "Other services",
+          "score": 0.0309
+        }
+      ]
+    },
+    {
+      "id": "Q22",
+      "question": "When does checkout take units out of stock, and which function does it call?",
+      "hit": true,
+      "seconds": 0.387,
+      "returned": [
+        {
+          "location": "shoplite/docs/architecture.md:17-26",
+          "symbol": "Checkout",
+          "score": 0.0313
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:17-21",
+          "symbol": "Changed",
+          "score": 0.0294
+        },
+        {
+          "location": "shoplite/shoplite/services/checkout.py:43-93",
+          "symbol": "checkout",
+          "score": 0.0291
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:41-46",
+          "symbol": "Added",
+          "score": 0.029
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0279
+        }
+      ]
+    },
+    {
+      "id": "Q23",
+      "question": "What does GET /admin/inventory/<sku> show, and what if the warehouse is down?",
+      "hit": true,
+      "seconds": 0.359,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/api/admin.py:72-82",
+          "symbol": "inventory_status",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite-warehouse/README.md:19-31",
+          "symbol": "API",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/warehouse_client.py:61-65",
+          "symbol": "fetch_stock_level",
+          "score": 0.0313
+        },
+        {
+          "location": "shoplite-warehouse/warehouse/api.py:39-45",
+          "symbol": "get_stock",
+          "score": 0.0313
+        },
+        {
+          "location": "shoplite-warehouse/warehouse/api.py:62-71",
+          "symbol": "stock_history",
+          "score": 0.0308
+        }
+      ]
+    },
+    {
+      "id": "Q24",
+      "question": "How do the admin reports avoid SQL injection?",
+      "hit": true,
+      "seconds": 0.371,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/api/reports.py:1-14",
+          "symbol": "",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/reports.py:1-40",
+          "symbol": "",
+          "score": 0.0323
+        },
+        {
+          "location": "shoplite/docs/data-model.md:35-38",
+          "symbol": "Reporting views",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:8-16",
+          "symbol": "Added",
+          "score": 0.0305
+        },
+        {
+          "location": "shoplite/docs/api.md:5-45",
+          "symbol": "Endpoints",
+          "score": 0.0292
+        }
+      ]
+    },
+    {
+      "id": "Q25",
+      "question": "How many orders are in each status in the seeded database?",
+      "hit": false,
+      "seconds": 0.366,
+      "returned": [
+        {
+          "location": "shoplite/scripts/seed.py:229-245",
+          "symbol": "seed_reviews",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/scripts/seed.py:255-276",
+          "symbol": "main",
+          "score": 0.0296
+        },
+        {
+          "location": "shoplite/scripts/seed.py:157-202",
+          "symbol": "seed_orders",
+          "score": 0.0293
+        },
+        {
+          "location": "shoplite/shoplite/api/admin.py:91-98",
+          "symbol": "list_all_orders",
+          "score": 0.0275
+        },
+        {
+          "location": "shoplite/scripts/seed.py:145-154",
+          "symbol": "pick_status",
+          "score": 0.0164
+        }
+      ]
+    },
+    {
+      "id": "Q26",
+      "question": "Which coupon has been redeemed the most times, and how much discount has it given in total?",
+      "hit": false,
+      "seconds": 0.375,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/coupons.py:34-44",
+          "symbol": "check_redeemable",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:1-15",
+          "symbol": "",
+          "score": 0.032
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:26-31",
+          "symbol": "times_redeemed",
+          "score": 0.0305
+        },
+        {
+          "location": "shoplite/shoplite/models/coupon.py:15-48",
+          "symbol": "Coupon",
+          "score": 0.0297
+        },
+        {
+          "location": "shoplite/shoplite/services/coupons.py:47-51",
+          "symbol": "coupon_discount",
+          "score": 0.0293
+        }
+      ]
+    },
+    {
+      "id": "Q27",
+      "question": "What is the best-selling product by units?",
+      "hit": false,
+      "seconds": 0.363,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/reports.py:51-55",
+          "symbol": "top_products",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:92-94",
+          "symbol": "total_reserved_units",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/models/inventory.py:16-26",
+          "symbol": "InventoryItem",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/services/stock.py:29-32",
+          "symbol": "available_units",
+          "score": 0.0301
+        },
+        {
+          "location": "shoplite/shoplite/services/cart.py:28-42",
+          "symbol": "add_item",
+          "score": 0.03
+        }
+      ]
+    },
+    {
+      "id": "Q28",
+      "question": "Which product category has brought in the most revenue?",
+      "hit": false,
+      "seconds": 0.367,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/services/catalog.py:22-29",
+          "symbol": "get_or_create_category",
+          "score": 0.031
+        },
+        {
+          "location": "shoplite/shoplite/models/product.py:13-42",
+          "symbol": "Product",
+          "score": 0.0308
+        },
+        {
+          "location": "shoplite/shoplite/services/catalog.py:32-42",
+          "symbol": "product_query",
+          "score": 0.0306
+        },
+        {
+          "location": "shoplite/shoplite/services/catalog.py:1-9",
+          "symbol": "",
+          "score": 0.0305
+        },
+        {
+          "location": "shoplite/scripts/seed.py:100-119",
+          "symbol": "seed_products",
+          "score": 0.0305
+        }
+      ]
+    },
+    {
+      "id": "Q29",
+      "question": "Which month had the most paid or shipped orders, and what was its revenue?",
+      "hit": true,
+      "seconds": 0.375,
+      "returned": [
+        {
+          "location": "shoplite/docs/data-model.md:23-26",
+          "symbol": "Order statuses",
+          "score": 0.0328
+        },
+        {
+          "location": "shoplite/shoplite/services/shipping.py:31-43",
+          "symbol": "ship_order",
+          "score": 0.0315
+        },
+        {
+          "location": "shoplite/shoplite/api/admin.py:101-108",
+          "symbol": "ship_order",
+          "score": 0.0298
+        },
+        {
+          "location": "shoplite/sql/reporting_views.sql:1-38",
+          "symbol": "",
+          "score": 0.0295
+        },
+        {
+          "location": "shoplite/CHANGELOG.md:24-31",
+          "symbol": "Added",
+          "score": 0.0289
+        }
+      ]
+    },
+    {
+      "id": "Q30",
+      "question": "How many card payments were declined in the seeded data, and what error code did they get?",
+      "hit": true,
+      "seconds": 0.373,
+      "returned": [
+        {
+          "location": "shoplite/shoplite/payments/gateway.py:1-8",
+          "symbol": "",
+          "score": 0.0325
+        },
+        {
+          "location": "shoplite/docs/api.md:46-70",
+          "symbol": "Errors",
+          "score": 0.0303
+        },
+        {
+          "location": "shoplite/shoplite/models/payment.py:17-43",
+          "symbol": "Payment",
+          "score": 0.029
+        },
+        {
+          "location": "shoplite/shoplite/errors.py:63-67",
+          "symbol": "PaymentDeclined",
+          "score": 0.0289
+        },
+        {
+          "location": "shoplite/shoplite/api/payments.py:15-24",
+          "symbol": "list_payments",
+          "score": 0.026
+        }
+      ]
+    }
+  ],
+  "chunking": "syntax",
+  "setup": "fused",
+  "filters": {
+    "latest": true
+  }
+}

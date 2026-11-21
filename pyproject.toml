@@ -1,0 +1,46 @@
+[project]
+name = "askmyrepo"
+version = "0.1.0"
+description = "AskMyRepo: ask a codebase and its database, with the file and line (or the SQL) under every claim."
+readme = "README.md"
+license = "LicenseRef-Course-Owned"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "bm25s==0.3.16",
+    "google-genai==3.3.0",
+    "httpx2==2.16.2",  # the SDK's HTTP client; imported for its timeout error
+    "langfuse==5.2.0",
+    "numpy==2.5.5",
+    "pinecone==10.3.0",
+    "pydantic==2.14.3",
+    "sentence-transformers==6.3.0",
+    "streamlit==1.67.0",
+    "tree-sitter==0.26.1",
+    "tree-sitter-language-pack==1.25.2",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab==4.6.6",
+    "pre-commit==4.7.0",
+    "pytest==9.2.0",
+    "ruff>=0.17,<0.18",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["askmyrepo"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::SyntaxWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
