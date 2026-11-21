@@ -121,6 +121,46 @@ gcloud secrets delete gemini-api-key
 gcloud secrets delete pinecone-api-key
 ```
 
+## 8. Auto-deploy from GitHub (redeploy on every push to `main`)
+
+`cloudbuild.yaml` builds `Dockerfile.cloud`, pushes the image to Artifact Registry and deploys it to Cloud Run. The repo is self-contained for this (`index/` and `data/shoplite.db` are committed), so the build needs nothing from your laptop.
+
+```bash
+# a) Let the build service account push images and deploy (once)
+PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format='value(projectNumber)')
+SA=$PROJECT_NUMBER-compute@developer.gserviceaccount.com
+for role in roles/run.admin roles/iam.serviceAccountUser roles/artifactregistry.writer \
+            roles/logging.logWriter roles/cloudbuild.builds.builder; do
+  gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member=serviceAccount:$SA --role=$role --condition=None --quiet
+done
+
+# b) Connect GitHub (opens a link you must approve once in the browser)
+gcloud builds connections create github github-conn --region=$REGION
+gcloud builds connections describe github-conn --region=$REGION   # shows the authorization link if pending
+
+# c) Link the repository
+gcloud builds repositories create askmyrepo \
+  --remote-uri=https://github.com/Sakshamxx/AskMyRepo.git \
+  --connection=github-conn --region=$REGION
+
+# d) Trigger: every push to main runs cloudbuild.yaml
+gcloud builds triggers create github --name=askmyrepo-main \
+  --region=$REGION \
+  --repository=projects/$PROJECT_ID/locations/$REGION/connections/github-conn/repositories/askmyrepo \
+  --branch-pattern='^main$' --build-config=cloudbuild.yaml \
+  --service-account=projects/$PROJECT_ID/serviceAccounts/$SA
+```
+
+After that, `git push origin main` rebuilds and redeploys on its own (about 15 minutes). Watch it with `gcloud builds list --region $REGION --limit 3`.
+
+**Changing the Gemini key:** add a new secret version, then redeploy (or push any commit). Running instances keep the old value until they restart.
+
+```bash
+printf '%s' "NEW_KEY" | gcloud secrets versions add gemini-api-key --data-file=-
+gcloud run services update $SERVICE --region $REGION --update-env-vars=KEY_ROTATED=$(date +%s)   # forces a new revision
+```
+
 ## Notes
 
 - **Cost:** Cloud Run bills while a request is being handled (scale to zero when idle). Cloud Build and Secret Manager have small free tiers.

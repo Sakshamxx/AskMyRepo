@@ -1,0 +1,45 @@
+# Cloud Build: build Dockerfile.cloud, push it, and deploy it to Cloud Run on every push to main.
+# The trigger and its setup are described in GCP_setup.md (section "Auto-deploy from GitHub").
+substitutions:
+  _REGION: us-central1
+  _SERVICE: askmyrepo
+  _IMAGE: us-central1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-deploy/askmyrepo
+
+steps:
+  - id: build
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "Dockerfile.cloud", "-t", "${_IMAGE}:${SHORT_SHA}", "-t", "${_IMAGE}:latest", "."]
+  - id: push
+    name: gcr.io/cloud-builders/docker
+    args: ["push", "--all-tags", "${_IMAGE}"]
+  - id: deploy
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - ${_SERVICE}
+      - --image=${_IMAGE}:${SHORT_SHA}
+      - --region=${_REGION}
+      - --port=8501
+      - --memory=8Gi
+      - --cpu=4
+      - --cpu-boost
+      - --timeout=600
+      - --concurrency=4
+      - --min-instances=0
+      - --max-instances=2
+      - --session-affinity
+      - --allow-unauthenticated
+      - --set-secrets=GEMINI_API_KEY=gemini-api-key:latest,PINECONE_API_KEY=pinecone-api-key:latest
+      - --quiet
+
+images:
+  - ${_IMAGE}:${SHORT_SHA}
+  - ${_IMAGE}:latest
+
+options:
+  machineType: E2_HIGHCPU_8
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 3600s
